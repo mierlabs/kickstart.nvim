@@ -212,6 +212,8 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('i', 'jj', '<ESC>', { desc = 'exit insert mode' })
 vim.keymap.set('x', '<leader>p', [["_dP]])
 vim.keymap.set('n', '<CR>', 'o<ESC>', { noremap = true, silent = true })
+vim.keymap.set('n', 'gh', '<C-o>', { desc = 'Jump back in jumplist' })
+vim.keymap.set('n', 'gl', '<C-i>', { desc = 'Jump forward in jumplist' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
