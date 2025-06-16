@@ -790,7 +790,7 @@ require('lazy').setup({
       },
       formatters = {
         clang_format = {
-          prepend_args = { '--style=file', '--fallback-style=LLVM' },
+          prepend_args = { '--style={BasedOnStyle: LLVM, IndentWidth: 4, UseTab: Never}' },
         },
         shfmt = {
           prepend_args = { '-i', '4' },
