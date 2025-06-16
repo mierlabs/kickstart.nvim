@@ -219,6 +219,9 @@ vim.keymap.set('x', '<leader>p', [["_dP]])
 vim.keymap.set('n', '<CR>', 'o<ESC>', { noremap = true, silent = true })
 vim.keymap.set('n', 'gh', '<C-o>', { desc = 'Jump back in jumplist' })
 vim.keymap.set('n', 'gl', '<C-i>', { desc = 'Jump forward in jumplist' })
+vim.keymap.set('n', '<leader><leader>x', '<cmd>source %<CR>')
+vim.keymap.set('n', '<leader>x', ':.lua<CR>')
+vim.keymap.set('v', '<leader>x', ':lua<CR>')
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
