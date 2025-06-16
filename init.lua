@@ -681,7 +681,7 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {},
+        clangd = {},
         gopls = {},
         pylsp = {},
         -- pyright = {},
@@ -779,11 +779,22 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
+        sh = { 'shfmt' },
+        html = { 'djlint' },
         -- Conform can also run multiple formatters sequentially
         python = { 'ruff_organize_imports ', 'ruff_format', 'ruff_fix' },
-        go = { 'gofmt' },
+        go = { 'goimports', 'gofmt' },
+        c = { 'clang_format' },
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
+      },
+      formatters = {
+        clang_format = {
+          prepend_args = { '--style=file', '--fallback-style=LLVM' },
+        },
+        shfmt = {
+          prepend_args = { '-i', '4' },
+        },
       },
     },
   },
