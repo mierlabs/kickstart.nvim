@@ -782,7 +782,7 @@ require('lazy').setup({
         sh = { 'shfmt' },
         html = { 'djlint' },
         -- Conform can also run multiple formatters sequentially
-        python = { 'ruff_organize_imports ', 'ruff_format', 'ruff_fix' },
+        python = { 'ruff_format', 'ruff_fix' },
         go = { 'goimports', 'gofmt' },
         c = { 'clang_format' },
         -- You can use 'stop_after_first' to run the first available formatter from the list
