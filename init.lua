@@ -235,8 +235,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Terminal Setup
-vim.keymap.set('t', '<esc><esc>', '<c-\\><c-n>')
-
 local state = {
   floating = {
     buf = -1,
