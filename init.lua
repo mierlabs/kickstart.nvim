@@ -286,7 +286,7 @@ local toggle_terminal = function()
 end
 
 vim.api.nvim_create_user_command('Floaterminal', toggle_terminal, {})
-vim.keymap.set('n', '<space>tt', toggle_terminal)
+vim.keymap.set({ 'n', 't' }, '<c-\\>', toggle_terminal)
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
