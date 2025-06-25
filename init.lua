@@ -221,7 +221,7 @@ vim.keymap.set('n', 'gh', '<C-o>', { desc = 'Jump back in jumplist' })
 vim.keymap.set('n', 'gl', '<C-i>', { desc = 'Jump forward in jumplist' })
 vim.keymap.set('n', '<M-j>', '<cmd>cnext<CR>')
 vim.keymap.set('n', '<M-k>', '<cmd>cprev<CR>')
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
+vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float)
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
