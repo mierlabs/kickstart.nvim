@@ -893,6 +893,9 @@ require('lazy').setup({
         autopep8 = {
           prepend_args = { '--max-line-length', '120' },
         },
+        isort = {
+          prepend_args = { '--line-length', '120' },
+        },
       },
     },
   },
