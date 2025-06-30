@@ -1137,3 +1137,22 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+-- LSP configs
+vim.lsp.config('pylsp', {
+  settings = {
+    pylsp = {
+      plugins = {
+        pylint = {
+          enabled = true,
+          args = {
+            '--disable=C0301,C0111,W1203,R0903',
+          },
+        },
+        pycodestyle = {
+          maxLineLength = 120,
+        },
+      },
+    },
+  },
+})
