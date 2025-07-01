@@ -1146,6 +1146,9 @@ vim.lsp.config('pylsp', {
   settings = {
     pylsp = {
       plugins = {
+        rope_autoimport = {
+          enabled = true,
+        },
         pylint = {
           enabled = true,
           args = {
