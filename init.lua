@@ -1146,6 +1146,9 @@ vim.lsp.config('pylsp', {
   settings = {
     pylsp = {
       plugins = {
+        autopep8 = {
+          enabled = false,
+        },
         rope_autoimport = {
           enabled = true,
         },
