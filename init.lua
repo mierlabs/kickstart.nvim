@@ -215,7 +215,7 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
 
 -- personal keymaps
-vim.keymap.set('i', 'jj', '<ESC>', { desc = 'exit insert mode' })
+-- vim.keymap.set('i', 'jj', '<ESC>', { desc = 'exit insert mode' })
 vim.keymap.set('x', '<leader>p', [["_dP]])
 -- vim.keymap.set('n', '<CR>', 'o<ESC>', { noremap = true, silent = true })
 vim.keymap.set('n', 'gh', '<C-o>', { desc = 'Jump back in jumplist' })
