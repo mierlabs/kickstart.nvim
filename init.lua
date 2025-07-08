@@ -481,7 +481,7 @@ require('lazy').setup({
         --  All the info you're looking for is in `:help telescope.setup()`
         defaults = {
           mappings = {
-            i = {
+            n = {
               ['<esc>'] = actions.close,
             },
           },
