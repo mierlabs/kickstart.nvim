@@ -224,6 +224,32 @@ vim.keymap.set('n', '<M-j>', '<cmd>cnext<CR>')
 vim.keymap.set('n', '<M-k>', '<cmd>cprev<CR>')
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float)
 
+local del_qf_item = function()
+  local items = vim.fn.getqflist()
+  local line = vim.fn.line '.'
+
+  if #items == 0 or line > #items then
+    return
+  end
+
+  table.remove(items, line)
+
+  vim.fn.setqflist(items, 'r')
+  if line > 1 then
+    vim.api.nvim_win_set_cursor(0, { line - 1, 0 })
+  end
+end
+
+vim.api.nvim_create_autocmd('FileType', {
+  group = vim.api.nvim_create_augroup('kickstart-qflist-delete', { clear = true }),
+  pattern = 'qf',
+  callback = function()
+    -- `dd` deletes an item from the list.
+    vim.keymap.set('n', 'dd', del_qf_item, { buffer = true })
+  end,
+  desc = 'Delete item from qflist',
+})
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
