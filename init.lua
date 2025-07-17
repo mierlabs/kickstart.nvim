@@ -805,8 +805,8 @@ require('lazy').setup({
       local servers = {
         clangd = {},
         gopls = {},
-        pylsp = {},
-        -- pyright = {},
+        -- pylsp = {},
+        pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -905,8 +905,8 @@ require('lazy').setup({
         sh = { 'shfmt' },
         html = { 'djlint' },
         -- Conform can also run multiple formatters sequentially
-        -- python = { 'ruff_organize_imports', 'ruff_format', 'ruff_fix' },
-        python = { 'isort', 'autopep8', 'autoflake' },
+        python = { 'ruff_organize_imports', 'ruff_format', 'ruff_fix' },
+        -- python = { 'isort', 'autopep8', 'autoflake' },
         go = { 'goimports', 'gofmt', 'golangci-lint' },
         c = { 'clang_format' },
         -- You can use 'stop_after_first' to run the first available formatter from the list
@@ -1168,29 +1168,29 @@ require('lazy').setup({
 -- vim: ts=2 sts=2 sw=2 et
 
 -- LSP configs
-vim.lsp.config('pylsp', {
-  settings = {
-    pylsp = {
-      plugins = {
-        autopep8 = {
-          enabled = false,
-        },
-        rope_autoimport = {
-          enabled = true,
-        },
-        pylint = {
-          enabled = true,
-          args = {
-            '--disable=C0301,C0111,W1203,R0903',
-          },
-        },
-        pycodestyle = {
-          maxLineLength = 120,
-        },
-      },
-    },
-  },
-})
+-- vim.lsp.config('pylsp', {
+--   settings = {
+--     pylsp = {
+--       plugins = {
+--         autopep8 = {
+--           enabled = false,
+--         },
+--         rope_autoimport = {
+--           enabled = true,
+--         },
+--         pylint = {
+--           enabled = true,
+--           args = {
+--             '--disable=C0301,C0111,W1203,R0903',
+--           },
+--         },
+--         pycodestyle = {
+--           maxLineLength = 120,
+--         },
+--       },
+--     },
+--   },
+-- })
 
 -- Prevent jumping to snippet in luasnip
 vim.api.nvim_create_autocmd('InsertLeave', {
