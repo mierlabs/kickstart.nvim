@@ -1192,12 +1192,16 @@ require('lazy').setup({
 --   },
 -- })
 
--- Prevent jumping to snippet in luasnip
-vim.api.nvim_create_autocmd('InsertLeave', {
-  desc = 'Avoid unexpected behaviour of luasnip when pressing tab in insert mode',
-  group = vim.api.nvim_create_augroup('kickstart-funky-luasnip', { clear = true }),
+-- Luasnip
+vim.api.nvim_create_autocmd('ModeChanged', {
+  desc = 'Stop snippets when you leave to normal mode',
+  group = vim.api.nvim_create_augroup('kickstart-stop-snippet', { clear = true }),
   callback = function()
-    if require('luasnip').session.current_nodes[vim.api.nvim_get_current_buf()] and not require('luasnip').session.jump_active then
+    if
+      ((vim.v.event.old_mode == 's' and vim.v.event.new_mode == 'n') or vim.v.event.old_mode == 'i')
+      and require('luasnip').session.current_nodes[vim.api.nvim_get_current_buf()]
+      and not require('luasnip').session.jump_active
+    then
       require('luasnip').unlink_current()
     end
   end,
