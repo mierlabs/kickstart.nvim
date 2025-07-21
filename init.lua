@@ -223,6 +223,8 @@ vim.keymap.set('n', 'gl', '<C-i>', { desc = 'Jump forward in jumplist' })
 vim.keymap.set('n', '<M-j>', '<cmd>cnext<CR>')
 vim.keymap.set('n', '<M-k>', '<cmd>cprev<CR>')
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float)
+vim.keymap.set('n', 'H', '^', { desc = 'Jump to beginning of the line' })
+vim.keymap.set('n', 'L', '$', { desc = 'Jump to end of the line' })
 
 local del_qf_item = function()
   local items = vim.fn.getqflist()
